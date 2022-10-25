@@ -1,0 +1,11 @@
+<div class="list-group" id="myList" role="tablist">
+  <a *ngFor="let navLink of navLinks"
+     class="list-group-item list-group-item-action active"
+     [ngClass]="{'active': isRouteActive(navLink.endpoint)}"
+     data-bs-toggle="list"
+     [routerLink]="navLink.endpoint"
+     role="tab">
+    <fa-icon *ngIf="navLink.icon" [icon]="navLink.icon" class="p-1"></fa-icon>
+    {{navLink.title}}
+  </a>
+</div>
